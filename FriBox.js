@@ -27,6 +27,10 @@ var streznik = http.createServer(function(zahteva, odgovor) {
    }
 });
 
+streznik.listen(process.env.PORT,function(){
+    console.log("Streznik poslusa na portu: "+process.env.PORT);
+});
+
 function posredujOsnovnoStran(odgovor) {
     posredujStaticnoVsebino(odgovor, './public/fribox.html', "");
 }
